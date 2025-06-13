@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق الطقس</title>
+    <!-- Google Fonts for a nice font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="weather-container">
+        <!-- قسم البحث -->
+        <div class="search-box">
+            <h1>ابحث عن طقس مدينة</h1>
+            <input type="text" id="city-input" placeholder="مثال: الرياض, دبي, القاهرة...">
+            <button id="search-btn">بحث</button>
+        </div>
+
+        <div id="weather-result" class="weather-result-box hidden">
+            <h2 id="city-name"></h2>
+            <div class="main-info">
+                <img id="weather-icon" src="" alt="ايقونة الطقس">
+                <p id="temperature"></p>
+            </div>
+            <p id="weather-description"></p>
+            <div class="details">
+                <div class="detail-item">
+                    <span>الرطوبة</span>
+                    <p id="humidity"></p>
+                </div>
+                <div class="detail-item">
+                    <span>سرعة الرياح</span>
+                    <p id="wind-speed"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم عرض رسائل الخطأ أو التحميل -->
+        <div id="message-box" class="message-box"></div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <footer class="signature">
+        <p>صُنع بحب بواسطة <a href="https://github.com/your-username" target="_blank"> اسلام</a></p>
+    </footer>
+    <!-- === End of Footer === -->
+
+</body>
+</html>
